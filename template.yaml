@@ -1,9 +1,26 @@
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: k8saasAuditDeprecatedIngress
+apiVersion: gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
 metadata:
-  name: audit-deprecated-ingress
+  name: k8saasauditdeprecatedingress
 spec:
-  match:
-    kinds:
-      - apiGroups: [""]
-        kinds: ["Ingress"]
+  crd:
+    spec:
+      names:
+        kind: k8saasAuditDeprecatedIngress
+            
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8saasauditdeprecatedingress
+
+        # This violation check if the field spec.ingressClassName is present
+        violation[{"msg": msg, "details": details}] {
+           input.request.object.spec.ingressClassName
+           msg := sprintf("Fied spec.ingressClassName is missing")
+        }
+
+        # This violation check if the field spec. is present
+        violation[{"msg": msg, "details": details}] {
+           not input.request.object.metadata.annotations.kubernetes.io/ingress.class
+           msg := sprintf("Fied metadata.annotations.kubernetes.io/ingress.class should not be present (deprecated)")
+        }
