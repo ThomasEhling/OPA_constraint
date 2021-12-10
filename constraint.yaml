@@ -7,12 +7,6 @@ spec:
     spec:
       names:
         kind: k8saasAuditDeprecatedIngress
-      validation:
-        # Schema for the `parameters` field
-        openAPIV3Schema:
-          properties:
-            ingressClassName:
-              type: string
             
   targets:
     - target: admission.k8s.gatekeeper.sh
