@@ -14,13 +14,13 @@ spec:
         package k8saasauditdeprecatedingress
 
         # This violation check if the field spec.ingressClassName is present
-        violation[{"msg": msg, "details": details}] {
+        violation[{"msg": msg}] {
            input.request.object.spec.ingressClassName
            msg := sprintf("Fied spec.ingressClassName is missing")
         }
 
-        # This violation check if the field spec. is present
-        violation[{"msg": msg, "details": details}] {
+        # This violation check if the field metadata.annotations.kubernetes.io/ingress.class is absent
+        violation[{"msg": msg}] {
            not input.request.object.metadata.annotations.kubernetes.io/ingress.class
            msg := sprintf("Fied metadata.annotations.kubernetes.io/ingress.class should not be present (deprecated)")
         }
