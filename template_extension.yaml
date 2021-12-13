@@ -1,0 +1,34 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sazureingresshttpsonly
+spec:
+  crd:
+    spec:
+      names:
+        kind: k8saasAuditDeprecatedIngress
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sazureingresshttpsonly
+
+        # ALLOWED HTTPS-ONLY SCENARIO
+        ## Azure Gateway Ingress Controller
+        ## [ tls spec exists ]
+        ## [ annotation appgw-ssl-certificate exist ]
+        ### Different from nginx ingress controller, when annotation ssl-redirect is false or missing, http will be blocked
+
+        ## Nginx Ingress Controller
+        ## [ enforce-ssl-redirect=true ] + [ tls spec ]
+        ## [ enforce-ssl-redirect=true ] + [ annotation auth-tls-secret exist ]
+        ## [ enforce-ssl-redirect=true ] + [ ssl-passthrough=true ]
+        ### If the cert provided is not valid, ssl-redirect will apply cert created by nginx and allow both http (not redirect) and https access. Thus enforce-ssl-redirect is requisite for nginx ingress controller
+
+        ## Unknown Ingress Controller
+        ## All allowed
+
+        violation[{"msg": msg}] {
+          input.review.kind.kind == "Ingress"
+          re_match("^(extensions|networking.k8s.io)$", input.review.kind.group)
+          msg := "Ingress be of version networking.k8s.io"
+        }
