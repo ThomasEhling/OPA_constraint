@@ -1,0 +1,32 @@
+{
+  "mode": "Microsoft.Kubernetes.Data",
+  "policyRule": {
+    "if": {
+      "field": "type",
+      "in": [
+        "Microsoft.ContainerService/managedClusters"
+      ]
+    },
+    "then": {
+      "effect": "[parameters('effect')]",
+      "details": {
+        "constraintTemplate": "https://raw.githubusercontent.com/ThomasEhling/OPA_constraint/main/template.yaml",
+        "constraint": "https://raw.githubusercontent.com/ThomasEhling/OPA_constraint/main/constraint.yaml"
+      }
+    }
+  },
+  "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
+      }
+  }
+}
