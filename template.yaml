@@ -21,6 +21,6 @@ spec:
 
         # This violation check if the field metadata.annotations.kubernetes.io/ingress.class is absent
         violation[{"msg": msg}] {
-           not input.request.object.metadata.annotations.kubernetes.io/ingress.class
+           not input.request.object.metadata.annotations["kubernetes.io/ingress.class"]
            msg := "Fied metadata.annotations.kubernetes.io/ingress.class should not be present (deprecated)"
         }
