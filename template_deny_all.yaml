@@ -14,6 +14,6 @@ spec:
         package k8saasdenyallingress
 
         # This violation check if the field metadata.annotations.kubernetes.io/ingress.class is absent
-        deny[{"msg": msg}] {
+        violation[{"msg": msg}] {
             msg := sprintf("Fied metadata.annotations.kubernetes.io/ingress.class should not be present (deprecated): %v", [input])
         }
