@@ -3,6 +3,7 @@ kind: k8saasAuditDeprecatedIngress
 metadata:
   name: audit-deprecated-ingress
 spec:
+  enforcementAction: warn
   match:
     kinds:
       - apiGroups: ["extensions", "networking.k8s.io"]
