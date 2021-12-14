@@ -1,0 +1,19 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8saasdenyallingress
+spec:
+  crd:
+    spec:
+      names:
+        kind: k8saasDenyAllIngress
+            
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8saasdenyallingress
+
+        # This violation check if the field metadata.annotations.kubernetes.io/ingress.class is absent
+        deny[{"msg": msg}] {
+            msg := sprintf("Fied metadata.annotations.kubernetes.io/ingress.class should not be present (deprecated): %v", [input])
+        }

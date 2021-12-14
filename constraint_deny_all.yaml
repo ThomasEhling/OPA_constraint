@@ -1,0 +1,9 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: k8saasDenyAllIngress
+metadata:
+  name: deny-all-ingress
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Ingress"]
