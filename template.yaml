@@ -16,11 +16,11 @@ spec:
         # This violation check if the field spec.ingressClassName is present
         violation[{"msg": msg}] {
            not input.review.object.spec.ingressClassName
-           msg := "Fied spec.ingressClassName is missing"
+           msg := sprintf("Ingress '%v': Fied spec.ingressClassName is missing ", [input.review.name])
         }
 
         # This violation check if the field metadata.annotations.kubernetes.io/ingress.class is absent
         violation[{"msg": msg}] {
            input.review.object.metadata.annotations["kubernetes.io/ingress.class"]
-           msg := "Fied metadata.annotations.kubernetes.io/ingress.class should not be present (deprecated)"
+           msg := sprintf("Ingress '%v': annotation 'kubernetes.io/ingress.class' is deprecated and should be removed ", [input.review.name])
         }

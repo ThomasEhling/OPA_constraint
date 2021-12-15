@@ -1,0 +1,430 @@
+{
+    "parameters": {},
+    "review": {
+        "_unstable": {
+            "namespace": {
+                "apiVersion": "v1",
+                "kind": "Namespace",
+                "metadata": {
+                    "creationTimestamp": "2021-12-01T21:57:55Z",
+                    "managedFields": [
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:phase": {}
+                                }
+                            },
+                            "manager": "kube-apiserver",
+                            "operation": "Update",
+                            "time": "2021-12-01T21:57:55Z"
+                        }
+                    ],
+                    "name": "default",
+                    "resourceVersion": "153",
+                    "selfLink": "/api/v1/namespaces/default",
+                    "uid": "d0336e76-b18d-4a9c-8edf-e74629e7644f"
+                },
+                "spec": {
+                    "finalizers": [
+                        "kubernetes"
+                    ]
+                },
+                "status": {
+                    "phase": "Active"
+                }
+            }
+        },
+        "dryRun": false,
+        "kind": {
+            "group": "networking.k8s.io",
+            "kind": "Ingress",
+            "version": "v1"
+        },
+        "name": "hello-world-ingress-legacy",
+        "namespace": "default",
+        "object": {
+            "apiVersion": "networking.k8s.io/v1",
+            "kind": "Ingress",
+            "metadata": {
+                "annotations": {
+                    "cert-manager.io/cluster-issuer": "letsencrypt-staging",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"cert-manager.io/cluster-issuer\":\"letsencrypt-staging\",\"kubernetes.io/ingress.class\":\"nginx\"},\"name\":\"hello-world-ingress-legacy\",\"namespace\":\"default\"},\"spec\":{\"rules\":[{\"host\":\"hello-world-ingress-legacy.demo.kaas.thalesdigital.io\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"aks-helloworld-one\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"hello-world-ingress-legacy.demo.kaas.thalesdigital.io\"],\"secretName\":\"tls-secret\"}]}}\n",
+                    "kubernetes.io/ingress.class": "nginx"
+                },
+                "creationTimestamp": "2021-12-14T10:12:08Z",
+                "generation": 1,
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.k8s.io/v1",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:cert-manager.io/cluster-issuer": {},
+                                    "f:kubectl.kubernetes.io/last-applied-configuration": {},
+                                    "f:kubernetes.io/ingress.class": {}
+                                }
+                            },
+                            "f:spec": {
+                                "f:rules": {},
+                                "f:tls": {}
+                            }
+                        },
+                        "manager": "kubectl-client-side-apply",
+                        "operation": "Update",
+                        "time": "2021-12-14T10:12:08Z"
+                    }
+                ],
+                "name": "hello-world-ingress-legacy",
+                "namespace": "default",
+                "uid": "fa1fbf5a-0722-4df3-9db1-d8af823bdb33"
+            },
+            "spec": {
+                "rules": [
+                    {
+                        "host": "hello-world-ingress-legacy.demo.kaas.thalesdigital.io",
+                        "http": {
+                            "paths": [
+                                {
+                                    "backend": {
+                                        "service": {
+                                            "name": "aks-helloworld-one",
+                                            "port": {
+                                                "number": 80
+                                            }
+                                        }
+                                    },
+                                    "path": "/",
+                                    "pathType": "Prefix"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "tls": [
+                    {
+                        "hosts": [
+                            "hello-world-ingress-legacy.demo.kaas.thalesdigital.io"
+                        ],
+                        "secretName": "tls-secret"
+                    }
+                ]
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        "oldObject": null,
+        "operation": "CREATE",
+        "options": {
+            "apiVersion": "meta.k8s.io/v1",
+            "fieldManager": "kubectl-client-side-apply",
+            "kind": "CreateOptions"
+        },
+        "requestKind": {
+            "group": "networking.k8s.io",
+            "kind": "Ingress",
+            "version": "v1"
+        },
+        "requestResource": {
+            "group": "networking.k8s.io",
+            "resource": "ingresses",
+            "version": "v1"
+        },
+        "resource": {
+            "group": "networking.k8s.io",
+            "resource": "ingresses",
+            "version": "v1"
+        },
+        "uid": "336399a3-503b-4919-9ece-208a1deaef42",
+        "userInfo": {
+            "extra": {
+                "oid": [
+                    "030c6e13-bbed-42ab-aff9-415272f839ad"
+                ]
+            },
+            "groups": [
+                "afc17801-34a7-47bf-8eb6-c4503c2f3b04",
+                "3bf9d90e-1358-4ca1-a4fd-0636df14e55b",
+                "ddb302f5-d240-4b29-bf5d-3c2fcb49fadb",
+                "b1988f3b-b8d9-48de-83d7-5c4e828bee1b",
+                "34ef56ca-c66e-4c49-b43d-424177917248",
+                "7aae3594-56a0-464d-953b-a3918bebaf1c",
+                "f5315d21-b36a-4111-9020-6e35d90c48eb",
+                "ad9fbe73-379b-40fa-93e4-339037c26ff1",
+                "2c4ebe7a-1d69-4945-90de-3a18c67d2904",
+                "03afaf97-95e0-4162-92bf-251e0b4a514b",
+                "4354825b-37d4-4acc-8e3b-dc7bad22e321",
+                "8fdeeec3-3bba-4550-9df4-0ea816aaa7b9",
+                "49ba68f5-263c-4716-ae8d-e459b539a89b",
+                "d4021323-0d16-40a2-b337-551d10b19099",
+                "0685b95e-e7b3-4615-9b5b-7a78765ae116",
+                "bbec0ebf-9454-4b42-a28c-1fd202282d11",
+                "cd76e461-9b7e-46c4-82ad-343241bcc450",
+                "b904ac69-c5e5-46de-a240-b6b03730f040",
+                "9c0aad54-8ffc-4209-983a-367aafa4306f",
+                "45fc2d97-6d33-4960-b4f1-368c320199c8",
+                "d94e7ac6-68c2-4665-8f35-dffde27e3cb2",
+                "df5a356d-6d17-4907-b610-8a5be97d5855",
+                "fc9067ed-c925-4587-bbc6-4abe5f2647d3",
+                "15c0f840-74ec-4bfb-9cfe-e189c2a1a47d",
+                "4311ad3a-bd9a-4fef-ae3b-04b79a438178",
+                "7addee82-769f-4cf9-a2b3-0fbac93c88cf",
+                "106debfc-3017-41d8-b689-0983264bcc1e",
+                "8f0fa56a-a6f4-4856-b00b-7b48b9427259",
+                "a35fe7fb-9bc5-4c3e-b312-0c1ac550bc4b",
+                "9228f068-5369-40e6-b621-674352cd46fd",
+                "9e7217ec-6d6c-4204-969c-2e066570ddf2",
+                "5b7d4185-83d9-485c-a747-fbd434870a4e",
+                "1eaa08e6-7dca-4997-a84c-1a6e5f712350",
+                "ee067dd9-224b-4822-9276-36f1f3a2dcb1",
+                "6437d64a-c98e-4995-b8d5-69cf29666ce6",
+                "a026f145-cb8d-40b8-a81b-b6a33802e1a6",
+                "d135bf4c-4858-4a7f-ba3c-545f1afbf516",
+                "4e01e9bc-4102-4d9f-abec-5e5a27ce8801",
+                "335d7bed-71b0-40f6-ad12-9063653b9ae6",
+                "99972c68-bf81-42fe-a30f-59a49424d237",
+                "611a2958-812c-4857-a4ce-a1f2d924c6c8",
+                "8025039f-233b-4ef5-9117-83f50bbdb060",
+                "c06c72ed-81e7-49a0-9b4b-5e1657074bf0",
+                "f297c1c3-274d-473d-aa7f-b7022b52b890",
+                "3a2f8799-0de8-4c3f-8632-ddbeb2e5daa4",
+                "d4b5268b-aa80-4081-a68e-6d922e3aa60c",
+                "2a223fa5-805f-4e59-824e-ba81075e5760",
+                "90eafc4b-b9af-4608-b0bc-44039d82f3fd",
+                "6d209b46-1d03-44ae-a4f4-288bc10767ba",
+                "eef69e8f-f830-4dcd-a8d9-dc35df266b8c",
+                "f2b88b12-ab7d-4af6-9b6f-4464cacb7c33",
+                "bd949f65-b247-4f70-b0b2-b29677362445",
+                "e99dc741-93fa-4163-9418-5a5689927b42",
+                "81c853f8-0ac9-4cd6-816e-5fdbebf2e977",
+                "40855c14-9b35-4139-abd1-8014982647c4",
+                "a1f48f87-1d44-492d-89ab-648897714047",
+                "a7b62346-e45c-478a-8cf6-113571d09c30",
+                "f62ec73d-7291-44c8-b69f-f20c59dabcd9",
+                "1608f37a-4444-41b1-ae7a-2708ff4e3afe",
+                "0494f86a-fab8-4ea9-9a63-32587a4ba96e",
+                "system:authenticated"
+            ],
+            "username": "thomas.ehling@thalesdigital.io"
+        }
+    }
+}): error when creating "hello-world-ingress-legacy.yaml": admission webhook "validation.gatekeeper.sh" denied the request: [ingress-https-only
+] Ingress should allow https only. tls configuration and annotation nginx.ingress.kubernetes.io/force-ssl-redirect=true are required: {
+    "parameters": {},
+    "review": {
+        "_unstable": {
+            "namespace": {
+                "apiVersion": "v1",
+                "kind": "Namespace",
+                "metadata": {
+                    "creationTimestamp": "2021-12-01T21:57:55Z",
+                    "managedFields": [
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:phase": {}
+                                }
+                            },
+                            "manager": "kube-apiserver",
+                            "operation": "Update",
+                            "time": "2021-12-01T21:57:55Z"
+                        }
+                    ],
+                    "name": "default",
+                    "resourceVersion": "153",
+                    "selfLink": "/api/v1/namespaces/default",
+                    "uid": "d0336e76-b18d-4a9c-8edf-e74629e7644f"
+                },
+                "spec": {
+                    "finalizers": [
+                        "kubernetes"
+                    ]
+                },
+                "status": {
+                    "phase": "Active"
+                }
+            }
+        },
+        "dryRun": false,
+        "kind": {
+            "group": "networking.k8s.io",
+            "kind": "Ingress",
+            "version": "v1"
+        },
+        "name": "hello-world-ingress-legacy",
+        "namespace": "default",
+        "object": {
+            "apiVersion": "networking.k8s.io/v1",
+            "kind": "Ingress",
+            "metadata": {
+                "annotations": {
+                    "cert-manager.io/cluster-issuer": "letsencrypt-staging",
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"cert-manager.io/cluster-issuer\":\"letsencrypt-staging\",\"kubernetes.io/ingress.class\":\"nginx\"},\"name\":\"hello-world-ingress-legacy\",\"namespace\":\"default\"},\"spec\":{\"rules\":[{\"host\":\"hello-world-ingress-legacy.demo.kaas.thalesdigital.io\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"aks-helloworld-one\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"hello-world-ingress-legacy.demo.kaas.thalesdigital.io\"],\"secretName\":\"tls-secret\"}]}}\n",
+                    "kubernetes.io/ingress.class": "nginx"
+                },
+                "creationTimestamp": "2021-12-14T10:12:08Z",
+                "generation": 1,
+                "managedFields": [
+                    {
+                        "apiVersion": "networking.k8s.io/v1",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:annotations": {
+                                    ".": {},
+                                    "f:cert-manager.io/cluster-issuer": {},
+                                    "f:kubectl.kubernetes.io/last-applied-configuration": {},
+                                    "f:kubernetes.io/ingress.class": {}
+                                }
+                            },
+                            "f:spec": {
+                                "f:rules": {},
+                                "f:tls": {}
+                            }
+                        },
+                        "manager": "kubectl-client-side-apply",
+                        "operation": "Update",
+                        "time": "2021-12-14T10:12:08Z"
+                    }
+                ],
+                "name": "hello-world-ingress-legacy",
+                "namespace": "default",
+                "uid": "fa1fbf5a-0722-4df3-9db1-d8af823bdb33"
+            },
+            "spec": {
+                "rules": [
+                    {
+                        "host": "hello-world-ingress-legacy.demo.kaas.thalesdigital.io",
+                        "http": {
+                            "paths": [
+                                {
+                                    "backend": {
+                                        "service": {
+                                            "name": "aks-helloworld-one",
+                                            "port": {
+                                                "number": 80
+                                            }
+                                        }
+                                    },
+                                    "path": "/",
+                                    "pathType": "Prefix"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "tls": [
+                    {
+                        "hosts": [
+                            "hello-world-ingress-legacy.demo.kaas.thalesdigital.io"
+                        ],
+                        "secretName": "tls-secret"
+                    }
+                ]
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        "oldObject": null,
+        "operation": "CREATE",
+        "options": {
+            "apiVersion": "meta.k8s.io/v1",
+            "fieldManager": "kubectl-client-side-apply",
+            "kind": "CreateOptions"
+        },
+        "requestKind": {
+            "group": "networking.k8s.io",
+            "kind": "Ingress",
+            "version": "v1"
+        },
+        "requestResource": {
+            "group": "networking.k8s.io",
+            "resource": "ingresses",
+            "version": "v1"
+        },
+        "resource": {
+            "group": "networking.k8s.io",
+            "resource": "ingresses",
+            "version": "v1"
+        },
+        "uid": "336399a3-503b-4919-9ece-208a1deaef42",
+        "userInfo": {
+            "extra": {
+                "oid": [
+                    "030c6e13-bbed-42ab-aff9-415272f839ad"
+                ]
+            },
+            "groups": [
+                "afc17801-34a7-47bf-8eb6-c4503c2f3b04",
+                "3bf9d90e-1358-4ca1-a4fd-0636df14e55b",
+                "ddb302f5-d240-4b29-bf5d-3c2fcb49fadb",
+                "b1988f3b-b8d9-48de-83d7-5c4e828bee1b",
+                "34ef56ca-c66e-4c49-b43d-424177917248",
+                "7aae3594-56a0-464d-953b-a3918bebaf1c",
+                "f5315d21-b36a-4111-9020-6e35d90c48eb",
+                "ad9fbe73-379b-40fa-93e4-339037c26ff1",
+                "2c4ebe7a-1d69-4945-90de-3a18c67d2904",
+                "03afaf97-95e0-4162-92bf-251e0b4a514b",
+                "4354825b-37d4-4acc-8e3b-dc7bad22e321",
+                "8fdeeec3-3bba-4550-9df4-0ea816aaa7b9",
+                "49ba68f5-263c-4716-ae8d-e459b539a89b",
+                "d4021323-0d16-40a2-b337-551d10b19099",
+                "0685b95e-e7b3-4615-9b5b-7a78765ae116",
+                "bbec0ebf-9454-4b42-a28c-1fd202282d11",
+                "cd76e461-9b7e-46c4-82ad-343241bcc450",
+                "b904ac69-c5e5-46de-a240-b6b03730f040",
+                "9c0aad54-8ffc-4209-983a-367aafa4306f",
+                "45fc2d97-6d33-4960-b4f1-368c320199c8",
+                "d94e7ac6-68c2-4665-8f35-dffde27e3cb2",
+                "df5a356d-6d17-4907-b610-8a5be97d5855",
+                "fc9067ed-c925-4587-bbc6-4abe5f2647d3",
+                "15c0f840-74ec-4bfb-9cfe-e189c2a1a47d",
+                "4311ad3a-bd9a-4fef-ae3b-04b79a438178",
+                "7addee82-769f-4cf9-a2b3-0fbac93c88cf",
+                "106debfc-3017-41d8-b689-0983264bcc1e",
+                "8f0fa56a-a6f4-4856-b00b-7b48b9427259",
+                "a35fe7fb-9bc5-4c3e-b312-0c1ac550bc4b",
+                "9228f068-5369-40e6-b621-674352cd46fd",
+                "9e7217ec-6d6c-4204-969c-2e066570ddf2",
+                "5b7d4185-83d9-485c-a747-fbd434870a4e",
+                "1eaa08e6-7dca-4997-a84c-1a6e5f712350",
+                "ee067dd9-224b-4822-9276-36f1f3a2dcb1",
+                "6437d64a-c98e-4995-b8d5-69cf29666ce6",
+                "a026f145-cb8d-40b8-a81b-b6a33802e1a6",
+                "d135bf4c-4858-4a7f-ba3c-545f1afbf516",
+                "4e01e9bc-4102-4d9f-abec-5e5a27ce8801",
+                "335d7bed-71b0-40f6-ad12-9063653b9ae6",
+                "99972c68-bf81-42fe-a30f-59a49424d237",
+                "611a2958-812c-4857-a4ce-a1f2d924c6c8",
+                "8025039f-233b-4ef5-9117-83f50bbdb060",
+                "c06c72ed-81e7-49a0-9b4b-5e1657074bf0",
+                "f297c1c3-274d-473d-aa7f-b7022b52b890",
+                "3a2f8799-0de8-4c3f-8632-ddbeb2e5daa4",
+                "d4b5268b-aa80-4081-a68e-6d922e3aa60c",
+                "2a223fa5-805f-4e59-824e-ba81075e5760",
+                "90eafc4b-b9af-4608-b0bc-44039d82f3fd",
+                "6d209b46-1d03-44ae-a4f4-288bc10767ba",
+                "eef69e8f-f830-4dcd-a8d9-dc35df266b8c",
+                "f2b88b12-ab7d-4af6-9b6f-4464cacb7c33",
+                "bd949f65-b247-4f70-b0b2-b29677362445",
+                "e99dc741-93fa-4163-9418-5a5689927b42",
+                "81c853f8-0ac9-4cd6-816e-5fdbebf2e977",
+                "40855c14-9b35-4139-abd1-8014982647c4",
+                "a1f48f87-1d44-492d-89ab-648897714047",
+                "a7b62346-e45c-478a-8cf6-113571d09c30",
+                "f62ec73d-7291-44c8-b69f-f20c59dabcd9",
+                "1608f37a-4444-41b1-ae7a-2708ff4e3afe",
+                "0494f86a-fab8-4ea9-9a63-32587a4ba96e",
+                "system:authenticated"
+            ],
+            "username": "thomas.ehling@thalesdigital.io"
+        }
+    }
+}
